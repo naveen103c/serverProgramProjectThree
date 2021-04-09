@@ -32,7 +32,6 @@ public class WordgameLogicTest {
         int expResult = 4;
         int result = instance.livesleft(lives);
         assertEquals(expResult, result);
-        
     }
 
     /**
@@ -45,8 +44,6 @@ public class WordgameLogicTest {
         int expResult = 0;
         int result = instance.getLives();
         assertEquals(expResult, result);
-        
-        
     }
 
     /**

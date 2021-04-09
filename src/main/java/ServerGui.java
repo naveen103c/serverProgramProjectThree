@@ -9,12 +9,15 @@ import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.effect.DropShadow;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
@@ -41,6 +44,8 @@ public class ServerGui extends Application {
     BorderPane startPane;
     Server serverConnection;
     ListView<String> listItems, listItems2;
+    private Image bg; //The image used for the background
+    private ImageView bgView;
     private Button[][] arr = new Button[13][2];
     private EventHandler<ActionEvent> myHandler;
     private int portNumber = -1;
@@ -96,7 +101,7 @@ public class ServerGui extends Application {
         BorderPane pane = new BorderPane();
         pane.setPadding(new Insets(70));
         pane.setStyle("-fx-background-color: #daeaee");
-        listItems.setStyle("-fx-text-fill: green");               
+        listItems.setStyle("-fx-text-fill: green");
         pane.setCenter(listItems);
         return new Scene(pane, 800, 800);
 
@@ -104,17 +109,17 @@ public class ServerGui extends Application {
 
     public Scene createServerLoginGui() throws IOException {
         BorderPane pane = new BorderPane();
-        pane.setPadding(new Insets(70));
-        pane.setStyle("-fx-background-color: #daeaee");
-        t1.setStyle("-fx-text-fill: green");        
-        t1.setFont(Font.font("Verdana", 20));
-        b1.setStyle("-fx-text-fill: green");
-        b1.setStyle("-fx-font-weight: bold");
-        b1.setStyle("-fx-background-color: linear-gradient(#61a2b1, #2A5058)");
+        t1.setStyle("-fx-text-fill: green");
+        t1.setFont(Font.font("Verdana", 20));        
+        b1.setStyle("-fx-text-fill: white;-fx-font-weight: bold;-fx-background-color: #ff471a;)");        
         b1.setFont(Font.font("Verdana", 20));
-        pane.setCenter(t1);
-        pane.setBottom(b1);
-        return new Scene(pane, 700, 400);
+        bg = new Image("guesstheword.png");
+        bgView = new ImageView(bg);
+        VBox vb = new VBox(10, bgView, t1, b1);
+        vb.setAlignment(Pos.CENTER);       
+        pane.setCenter(vb);
+        pane.setStyle("-fx-background-color: linear-gradient(#61a2b1, #2A5058)");
+        return new Scene(pane, 700, 700);
     }
 
 }

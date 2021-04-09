@@ -1,7 +1,5 @@
 import java.util.Random;
 
-
-
 public class ListOfWords {
 	private static String[] foodArr = new String[] {"Asparagus", "Burrito", "Brownie", "Cheesecake", "Dragonfruit",
 			"Guacamole", "Doughnut", "Lasagna", "Lobster", "Noodles", "Oyster", "Pumpkin", "Salmon", "Turnip", "Turkey", "Waffle", 
@@ -17,7 +15,7 @@ public class ListOfWords {
 		String randomWord = "";
 		int randomNumber = lastWord;
 		while (randomNumber == lastWord) {
-			randomNumber = (int) (Math.random()*20);
+			randomNumber = (int) (Math.random()*10);
 			if(theme == 1) {
 				randomWord = foodArr[randomNumber];
 			}
