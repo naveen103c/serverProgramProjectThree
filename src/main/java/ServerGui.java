@@ -1,21 +1,16 @@
-
-import java.awt.Color;
 import java.io.IOException;
 import java.util.HashMap;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
-import javafx.scene.effect.DropShadow;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
@@ -60,6 +55,7 @@ public class ServerGui extends Application {
         listItems = new ListView<String>();
         t1 = new TextField();
         t1.setText("8080");
+        t1.setMaxWidth(150);
         b1 = new Button("Start Server");
         serverStartScene = createServerLoginGui();
         sceneMap = new HashMap<String, Scene>();
@@ -111,7 +107,7 @@ public class ServerGui extends Application {
         BorderPane pane = new BorderPane();
         t1.setStyle("-fx-text-fill: green");
         t1.setFont(Font.font("Verdana", 20));        
-        b1.setStyle("-fx-text-fill: white;-fx-font-weight: bold;-fx-background-color: #ff471a;)");        
+        b1.setStyle("-fx-text-fill: black;-fx-font-weight: bold;-fx-background-color: white;)");        
         b1.setFont(Font.font("Verdana", 20));
         bg = new Image("guesstheword.png");
         bgView = new ImageView(bg);
